@@ -1,4 +1,4 @@
-﻿
+
 --======================================================================1. Diagnose Memory Usage====================================================================================
 -------Check SQL Server Memory Usage
 SELECT 
@@ -40,8 +40,9 @@ SELECT
 FROM sys.dm_exec_sessions
 WHERE memory_usage > 0;
 ---Terminate problematic sessions:
-KILL <session_id>;
-
+DECLARE @session_id INT;
+SET @session_id = 53; -- Replace 53 with the actual session ID
+EXEC('KILL ' + @session_id);
 
 
 
@@ -64,7 +65,7 @@ DBCC SHRINKDATABASE (tempdb);
 
 
 --================================================3. Adjust SQL Server Resource Governor=============================================================================================
-ALTER RESOURCE POOL default
+ALTER RESOURCE POOL [default]
 WITH (MAX_MEMORY_PERCENT = 80); -- Allow up to 80% of system memory
 ALTER RESOURCE GOVERNOR RECONFIGURE;
 

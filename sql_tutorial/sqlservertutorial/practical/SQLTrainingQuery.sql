@@ -130,6 +130,12 @@ Section 1. Querying data
 •SELECT – show you how to query data against a single table.
 */
 --1.1.1) SQL Server SELECT – retrieve some columns of a table example------------------------------------------------------------------------------------------------------------------
+
+select * from sys.databases;--show all databases
+
+use BikeStores --use 'BikeStores' database
+go 
+
 SELECT
     first_name,
     last_name
@@ -244,7 +250,7 @@ ORDER BY
     product_name 
 OFFSET 0 ROWS 
 FETCH NEXT 10 ROWS ONLY;
---3.2.1) Using TOP with a constant value--------------------------------------------------------------------------------------------------------------------------------------------------
+--3.2.1) Using TOP with a constant value(same as 3.1.3)--------------------------------------------------------------------------------------------------------------------------------------------------
 SELECT TOP 10
     product_name, 
     list_price

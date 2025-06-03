@@ -1549,6 +1549,7 @@ VALUES
     ('Humberto','Acevedo','humberto.acevedo@example.com'),
     ('Humberto','Acevedo','humberto.acevedo@example.com'),
     ('Pilar','Ackerman','pilar.ackerman@example.com');
+
 SELECT 
    contact_id, 
    first_name, 
